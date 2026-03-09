@@ -20,6 +20,9 @@ private:
     // Callback for the GET method to retrieve the chat history
     void onHistoryReceived(QNetworkReply *reply);
 
+    // Callback for the POST method to send a message
+    void onMessageSent(QNetworkReply *reply);
+
 public:
     // Constructor
     ChatClient(QObject *parent = nullptr);
@@ -28,6 +31,6 @@ public:
     void fetchHistory();
 
     // POST method to send a message to the server
-    // void sendMessage(const QString& user, const QString& message);
+    void sendMessage(const QString& user, const QString& message);
 
 };
